@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-base:      #09090b; /* zinc-950 */
+    --bg-surface:   #18181b; /* zinc-900 */
+    --bg-elevated:  #27272a; /* zinc-800 */
+    --border:       #3f3f46; /* zinc-700 */
+    --text-primary: #fafafa;
+    --text-muted:   #a1a1aa;
+    --brand-500:    142 71% 45%;    /* emerald-500 */
+    --glass-bg:     rgba(255,255,255,0.06); /* PREMIUM UI: Glassmorphism için arka plan rengi */
+    --glass-border: rgba(255,255,255,0.12); /* PREMIUM UI: Glassmorphism için kenarlık rengi */
+    --blur:         blur(16px) saturate(180%); /* PREMIUM UI: Glassmorphism için blur filtresi */
+    
+    /* Font variables for Tailwind config */
+    --font-sans: 'Outfit', 'Inter', system-ui, sans-serif;
+    --font-mono: 'Inconsolata', monospace; /* PREMIUM UI: Monospace font */
+  }
+
+  /* Light mode (optional, for future implementation) */
+  .light {
+    --bg-base:      #f8fafc; /* slate-50 */
+    --bg-surface:   #ffffff; /* white */
+    --bg-elevated:  #ffffff; /* white */
+    --border:       #e2e8f0; /* slate-200 */
+    --text-primary: #0f172a; /* slate-900 */
+    --text-muted:   #64748b; /* slate-500 */
+    --brand-500:    221 83% 53%;   /* blue-600 */
+    --glass-bg:     rgba(0,0,0,0.03); 
+    --glass-border: rgba(0,0,0,0.08); 
+  }
+
+  html {
+    @apply scroll-smooth;
+    font-feature-settings: "liga" 0;
+  }
+
+  body {
+    @apply antialiased min-h-dvh;
+  }
+
+  /* PREMIUM UI: Glassmorphism kart stili */
+  .glass-card {
+    backdrop-filter: var(--blur); /* HATA DÜZELTME: backdrop-blur-sm yerine doğrudan CSS değişkeni kullanıldı */
+    @apply bg-[var(--glass-bg)] border border-[var(--glass-border)] rounded-glass shadow-glass-dark transition-all duration-200 ease-in-out;
+  }
+  .glass-card:hover {
+    @apply shadow-glass-hero -translate-y-0.5;
+  }
+}
+
+/* Framer Motion Keyframes (for tailwind animation utility) */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
