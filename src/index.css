@@ -1,10 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --bg-base:      #09090b; /* zinc-950 */
+    --bg-base:      #0B080A; /* Obsidian Night */
     --bg-surface:   #18181b; /* zinc-900 */
     --bg-elevated:  #27272a; /* zinc-800 */
     --border:       #3f3f46; /* zinc-700 */
@@ -16,7 +18,10 @@
     --blur:         blur(16px) saturate(180%); /* PREMIUM UI: Glassmorphism için blur filtresi */
     
     /* Font variables for Tailwind config */
-    --font-sans: 'Outfit', 'Inter', system-ui, sans-serif;
+    --font-display: 'Playfair Display', serif; /* PREMIUM UI: Display font için değişken */
+    --font-outfit: 'Outfit', sans-serif; /* PREMIUM UI: Outfit font için değişken */
+    --font-inter: 'Inter', system-ui, sans-serif; /* PREMIUM UI: Inter font için değişken */
+    --font-sans: var(--font-outfit); /* PREMIUM UI: Sans-serif font varsayılan olarak Outfit olarak ayarlandı */
     --font-mono: 'Inconsolata', monospace; /* PREMIUM UI: Monospace font */
   }
 
@@ -40,6 +45,7 @@
 
   body {
     @apply antialiased min-h-dvh;
+    font-family: var(--font-inter); /* Body metinleri için Inter fontu varsayılan olarak ayarlandı */
   }
 
   /* PREMIUM UI: Glassmorphism kart stili */

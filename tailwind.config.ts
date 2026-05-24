@@ -12,10 +12,22 @@ export default {
           50: 'hsl(var(--brand-50) / <alpha-value>)',
           500: 'hsl(var(--brand-500) / <alpha-value>)',
           600: 'hsl(var(--brand-600) / <alpha-value>)',
-        }
+        },
+        // Yeni renkler: Obsidian Night, Velvet Crimson, Ethereal Blush
+        obsidian: {
+          950: '#0B080A',
+        },
+        velvet: {
+          500: '#9E1B32',
+        },
+        ethereal: {
+          300: '#F8A1B2',
+        },
       },
       fontFamily: {
+        // Mevcut font tanımı korunurken, yeni 'display' font ailesi eklendi
         sans: ['Outfit', 'Inter', 'system-ui', 'sans-serif'], // PREMIUM UI: Outfit for headings, Inter for body
+        display: ['"Playfair Display"', 'serif'], // PREMIUM UI: Başlıklar için Playfair Display eklendi
         mono: ['Inconsolata', 'monospace'], // PREMIUM UI: Monospace font eklendi
       },
       borderRadius: {
@@ -37,6 +49,9 @@ export default {
         'fade-up': 'fadeUp 0.4s ease both',
         'fade-in': 'fadeIn 0.3s ease both',
         'slide-in': 'slideIn 0.35s cubic-bezier(0.16,1,0.3,1) both',
+      },
+      transitionTimingFunction: {
+        'ease-glass': 'cubic-bezier(0.16, 1, 0.3, 1)', // PREMIUM UI: Glassmorphism ve genel animasyonlar için custom easing fonksiyonu
       }
     },
   },
